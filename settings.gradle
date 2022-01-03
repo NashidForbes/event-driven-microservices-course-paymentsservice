@@ -1,7 +1,5 @@
 rootProject.name = 'PaymentsService'
 
-rootProject.name = 'ProductsService'
-
 include ':sagacoreapi'
 project(':sagacoreapi').projectDir = new File('../sagacoreapi')
 
