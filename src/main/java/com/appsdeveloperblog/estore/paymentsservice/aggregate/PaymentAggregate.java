@@ -17,9 +17,8 @@ public class PaymentAggregate {
     // with the right aggregate
     // via the id (target id -> AggregateIdentifier)
     @AggregateIdentifier
-    private String paymentId;
     private String orderId;
-
+    private String paymentId;
 
     public PaymentAggregate() {
     }
