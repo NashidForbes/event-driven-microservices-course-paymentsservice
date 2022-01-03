@@ -17,14 +17,19 @@ public class PaymentAggregate {
     // with the right aggregate
     // via the id (target id -> AggregateIdentifier)
     @AggregateIdentifier
-    private String orderId;
     private String paymentId;
+
+    private String orderId;
+
 
     public PaymentAggregate() {
     }
 
+    // command handler should be constructor with no "void" passed
+    // and should process the command object.
+    //https://stackoverflow.com/questions/54505687/aggregate-not-found-in-the-event-store
     @CommandHandler
-    public void handle(ProcessPaymentCommand processPaymentCommand){
+    public PaymentAggregate(ProcessPaymentCommand processPaymentCommand){
 
         if(processPaymentCommand.getOrderId() == null){
             throw new InvalidParameterException("Order Id is null");
